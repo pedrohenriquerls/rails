@@ -18,10 +18,10 @@ Gem::Specification.new do |s|
 
   s.files = ['README.md']
 
-  s.add_dependency 'activesupport', version
+  s.add_dependency 'activesupport', "6.0.6.1"
   s.add_dependency 'actionpack',    version
   s.add_dependency 'actionview',    version
-  s.add_dependency 'activemodel',   version
+  s.add_dependency 'activemodel',   "6.0.6.1"
   s.add_dependency 'activerecord',  "6.0.6.1"
   s.add_dependency 'actionmailer',  version
   s.add_dependency 'activejob',     version
