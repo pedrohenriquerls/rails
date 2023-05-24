@@ -29,7 +29,7 @@ module ActiveRecord
       # raised unless you specify an +:override+ option. <tt>override: true</tt> will
       # cause your type to be used instead of the native type. <tt>override:
       # false</tt> will cause the native type to be used over yours if one exists.
-      def register(type_name, klass = nil, **options, &block)
+      ruby2_keywords def register(type_name, klass = nil, **options, &block)
         registry.register(type_name, klass, **options, &block)
       end
 
