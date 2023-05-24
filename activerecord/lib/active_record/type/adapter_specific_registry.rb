@@ -4,7 +4,7 @@ module ActiveRecord
   # :stopdoc:
   module Type
     class AdapterSpecificRegistry < ActiveModel::Type::Registry
-      def add_modifier(options, klass, **args)
+      ruby2_keywords def add_modifier(options, klass, **args)
         registrations << DecorationRegistration.new(options, klass, **args)
       end
 
@@ -29,7 +29,7 @@ module ActiveRecord
         @override = override
       end
 
-      def call(_registry, *args, adapter: nil, **kwargs)
+      ruby2_keywords def call(_registry, *args, adapter: nil, **kwargs)
         if kwargs.any? # https://bugs.ruby-lang.org/issues/10856
           block.call(*args, **kwargs)
         else
@@ -37,7 +37,7 @@ module ActiveRecord
         end
       end
 
-      def matches?(type_name, *args, **kwargs)
+      ruby2_keywords def matches?(type_name, *args, **kwargs)
         type_name == name && matches_adapter?(**kwargs)
       end
 

@@ -6,7 +6,7 @@ module ActiveModel
         @registrations = []
       end
 
-      def register(type_name, klass = nil, **options, &block)
+      ruby2_keywords def register(type_name, klass = nil, **options, &block)
         block ||= proc { |_, *args| klass.new(*args) }
         registrations << registration_klass.new(type_name, block, **options)
       end
@@ -43,7 +43,7 @@ module ActiveModel
         @block = block
       end
 
-      def call(_registry, *args, **kwargs)
+      ruby2_keywords def call(_registry, *args, **kwargs)
         if kwargs.any? # https://bugs.ruby-lang.org/issues/10856
           block.call(*args, **kwargs)
         else
@@ -51,7 +51,7 @@ module ActiveModel
         end
       end
 
-      def matches?(type_name, *args, **kwargs)
+      ruby2_keywords def matches?(type_name, *args, **kwargs)
         type_name == name
       end
 

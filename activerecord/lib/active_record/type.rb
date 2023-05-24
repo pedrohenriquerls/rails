@@ -19,7 +19,6 @@ module ActiveRecord
 
     class << self
       attr_accessor :registry # :nodoc:
-      delegate :add_modifier, to: :registry
 
       # Add a new type to the registry, allowing it to be referenced as a
       # symbol by {ActiveRecord::Base.attribute}[rdoc-ref:Attributes::ClassMethods#attribute].
@@ -29,8 +28,12 @@ module ActiveRecord
       # raised unless you specify an +:override+ option. <tt>override: true</tt> will
       # cause your type to be used instead of the native type. <tt>override:
       # false</tt> will cause the native type to be used over yours if one exists.
-      def register(type_name, klass = nil, options, &block)
-        registry.register(type_name, klass, options, &block)
+      define_method :add_modifier do |options, klass, **args|
+        registry.add_modifier(options, klass, **args)
+      end
+      ruby2_keywords :add_modifier
+      ruby2_keywords def register(type_name, klass = nil, **options, &block)
+        registry.register(type_name, klass, **options, &block)
       end
 
       ruby2_keywords def lookup(*args, adapter: current_adapter_name, **kwargs) # :nodoc:
