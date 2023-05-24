@@ -57,16 +57,16 @@ module ActiveRecord
     UnsignedInteger = ActiveModel::Type::UnsignedInteger
     Value = ActiveModel::Type::Value
 
-    register(:big_integer, Type::BigInteger, override: false)
-    register(:binary, Type::Binary, override: false)
-    register(:boolean, Type::Boolean, override: false)
-    register(:date, Type::Date, override: false)
-    register(:datetime, Type::DateTime, override: false)
-    register(:decimal, Type::Decimal, override: false)
-    register(:float, Type::Float, override: false)
-    register(:integer, Type::Integer, override: false)
-    register(:string, Type::String, override: false)
-    register(:text, Type::Text, override: false)
-    register(:time, Type::Time, override: false)
+    register(:big_integer, Type::BigInteger, { override: false })
+    register(:binary, Type::Binary, { override: false })
+    register(:boolean, Type::Boolean, { override: false })
+    register(:date, Type::Date, { override: false })
+    register(:datetime, Type::DateTime, { override: false })
+    register(:decimal, Type::Decimal, { override: false })
+    register(:float, Type::Float, { override: false })
+    register(:integer, Type::Integer, { override: false })
+    register(:string, Type::String, { override: false })
+    register(:text, Type::Text, { override: false })
+    register(:time, Type::Time, { override: false })
   end
 end
