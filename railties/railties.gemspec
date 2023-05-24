@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   s.rdoc_options << '--exclude' << '.'
 
-  s.add_dependency 'activesupport', version
+  s.add_dependency 'activesupport', "6.0.6.1"
   s.add_dependency 'actionpack',    version
 
   s.add_dependency 'rake', '>= 0.8.7'

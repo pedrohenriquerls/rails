@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
   s.files        = Dir['CHANGELOG.md', 'MIT-LICENSE', 'README.md', 'lib/**/*']
   s.require_path = 'lib'
 
-  s.add_dependency 'activesupport', version
+  s.add_dependency 'activesupport', "6.0.6.1"
   s.add_dependency 'globalid', '>= 0.3.6'
 end

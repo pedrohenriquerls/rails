@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'activesupport', version
+  s.add_dependency 'activesupport', "6.0.6.1"
 
   s.add_dependency 'rack',      '~> 2.0'
   s.add_dependency 'rack-test', '~> 0.6.3'
@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-dom-testing', '~> 2.0'
   s.add_dependency 'actionview', version
 
-  s.add_development_dependency 'activemodel', version
+  s.add_development_dependency 'activemodel', "6.0.6.1"
 end
