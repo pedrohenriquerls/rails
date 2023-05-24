@@ -29,11 +29,11 @@ module ActiveRecord
       # raised unless you specify an +:override+ option. <tt>override: true</tt> will
       # cause your type to be used instead of the native type. <tt>override:
       # false</tt> will cause the native type to be used over yours if one exists.
-      ruby2_keywords def register(type_name, klass = nil, **options, &block)
-        registry.register(type_name, klass, **options, &block)
+      def register(type_name, klass = nil, options, &block)
+        registry.register(type_name, klass, options, &block)
       end
 
-      def lookup(*args, adapter: current_adapter_name, **kwargs) # :nodoc:
+      ruby2_keywords def lookup(*args, adapter: current_adapter_name, **kwargs) # :nodoc:
         registry.lookup(*args, adapter: adapter, **kwargs)
       end
 
